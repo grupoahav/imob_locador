@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "109866188319",
+    "project_id": "imob-70fc3",
+    "storage_bucket": "imob-70fc3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109866188319:android:a16d60a2ed573373805f2a",
+        "android_client_info": {
+          "package_name": "com.zaranzalabs.imob"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109866188319-310kpv30oa29hq2r8q55ua94dqkes6dr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9CMlHWTzoXmOUu9Ioizn1Sf7bnXHQuaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109866188319-310kpv30oa29hq2r8q55ua94dqkes6dr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
