@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.zaranzalabs" "\0"
+            VALUE "CompanyName", "com.example" "\0"
             VALUE "FileDescription", "A new Flutter project." "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "imob" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2021 com.zaranzalabs. All rights reserved." "\0"
-            VALUE "OriginalFilename", "imob.exe" "\0"
-            VALUE "ProductName", "imob" "\0"
+            VALUE "InternalName", "imob_locador" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2021 com.example. All rights reserved." "\0"
+            VALUE "OriginalFilename", "imob_locador.exe" "\0"
+            VALUE "ProductName", "imob_locador" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

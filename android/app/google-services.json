@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "109866188319",
-    "project_id": "imob-70fc3",
-    "storage_bucket": "imob-70fc3.appspot.com"
+    "project_number": "889375826753",
+    "project_id": "imobtelecom",
+    "storage_bucket": "imobtelecom.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:109866188319:android:a16d60a2ed573373805f2a",
+        "mobilesdk_app_id": "1:889375826753:android:e4a312eeb66f87b79c77c0",
         "android_client_info": {
-          "package_name": "com.zaranzalabs.imob"
+          "package_name": "br.com.imobtelecom.locador"
         }
       },
       "oauth_client": [
         {
-          "client_id": "109866188319-310kpv30oa29hq2r8q55ua94dqkes6dr.apps.googleusercontent.com",
+          "client_id": "889375826753-caqirg1f9jm0jqbent191oe3f4446vgm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA9CMlHWTzoXmOUu9Ioizn1Sf7bnXHQuaM"
+          "current_key": "AIzaSyCvsosptuxSJzijM7lPuM7gyLtZP8CAoAw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "109866188319-310kpv30oa29hq2r8q55ua94dqkes6dr.apps.googleusercontent.com",
+              "client_id": "889375826753-caqirg1f9jm0jqbent191oe3f4446vgm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(imob LANGUAGES CXX)
+project(imob_locador LANGUAGES CXX)
 
-set(BINARY_NAME "imob")
+set(BINARY_NAME "imob_locador")
 
 cmake_policy(SET CMP0063 NEW)
 

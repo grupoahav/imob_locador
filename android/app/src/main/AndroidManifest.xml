@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zaranzalabs.imob">
-   <application
-        android:label="imob"
+    package="br.com.imobtelecom.locador">
+  
+  <uses-permission android:name="android.permission.INTERNET"/>
+
+  <application
+        android:label="Locador Imob"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
