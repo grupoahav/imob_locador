@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:imob_design_system/colors/colors.dart';
 
 class ImobPage extends StatelessWidget {
   const ImobPage({Key? key, required this.body, this.hasBackButton = false})
@@ -40,13 +39,16 @@ class ImobPage extends StatelessWidget {
             children: const [
               Icon(
                 Icons.arrow_back_outlined,
-                color: ImobColors.darkGray,
+                // color: ImobColors.darkGray,
               ),
               SizedBox(width: 8),
-              Text(
-                "Voltar",
-                style: TextStyle(fontSize: 16, color: ImobColors.textColor),
-              ),
+              // Text(
+              //   "Voltar",
+              //   style: TextStyle(
+              //     fontSize: 16,
+              //     color: ImobColors.textColor,
+              //   ),
+              // ),
             ],
           ),
         ),

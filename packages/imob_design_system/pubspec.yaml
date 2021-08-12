@@ -1,0 +1,35 @@
+name: imob_design_system
+description: Design System IMOB
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  # State Management, DI and Routes
+  flutter_modular: 3.3.1
+
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - lib/assets/svgs/logo/logo_imob_telecom.svg
+  
+  fonts:
+    - family: JosefinSans
+      fonts:
+        - asset: lib/assets/fonts/JosefinSans/JosefinSans-Regular.ttf
+          weight: 400
+        - asset: lib/assets/fonts/JosefinSans/JosefinSans-Medium.ttf
+          weight: 500
+        - asset: lib/assets/fonts/JosefinSans/JosefinSans-SemiBold.ttf
+          weight: 600
