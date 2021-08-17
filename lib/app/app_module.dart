@@ -1,17 +1,21 @@
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:imob_auth/imob_auth.dart';
 import 'package:imob_core/imob_core.dart';
 import 'package:imob_informacoes_app/imob_informacoes_app.dart';
 
 import 'app_controller.dart';
-import 'modules/home/home_module.dart';
+import 'modules/bottom_navigation/bottom_navigation_module.dart';
+import 'modules/cadastrar_local/cadastrar_local_module.dart';
 import 'modules/login/domain/usecases/on_login_sucess_usecase.dart';
 import 'modules/login/domain/usecases/on_register_sucess_usecase.dart';
 import 'modules/onboarding/onboarding_module.dart';
 
 class AppModule extends Module {
-  static String get initialRoute => ImobAuthModule.routeInitial;
+  static String get initialRoute => FirebaseAuth.instance.currentUser == null
+      ? ImobAuthModule.routeInitial
+      : BottonNavigationModule.routeInitial;
 
   @override
   final List<Bind> binds = [
@@ -54,8 +58,12 @@ class AppModule extends Module {
       module: ImobOnboardingModule(),
     ),
     ModuleRoute(
-      HomeModule.routeName,
-      module: HomeModule(),
+      BottonNavigationModule.routeName,
+      module: BottonNavigationModule(),
+    ),
+    ModuleRoute(
+      CadastrarLocalModule.routeName,
+      module: CadastrarLocalModule(),
     ),
   ];
 }
