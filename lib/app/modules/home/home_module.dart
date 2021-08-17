@@ -1,8 +1,10 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'presentation/controllers/home_controller.dart';
 import 'presentation/pages/home_page.dart';
 
-class HomeModule extends Module {
+class HomeModule extends WidgetModule {
   static String get routeName => '/home';
   static String get routeInitial => routeName;
 
@@ -10,6 +12,7 @@ class HomeModule extends Module {
   final List<Bind> binds = [
     // ------------------------ STORES ------------------------
     // --------------------- CONTROLLERS ----------------------
+    Bind((i) => HomeController()),
     // ---------------------- USE CASES -----------------------
     // --------------------- REPOSITORIES ---------------------
     // --------------------- DATA SOURCES ---------------------
@@ -23,4 +26,7 @@ class HomeModule extends Module {
       child: (_, args) => HomePage(),
     ),
   ];
+
+  @override
+  Widget get view => HomePage();
 }
