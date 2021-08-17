@@ -97,7 +97,7 @@ abstract class _RegisterControllerBase with Store {
             failureMessage: failure.message,
             context: context,
           ),
-          (sucess) => state = ControlState.sucess,
+          (sucess) => state = ControlState.success,
         );
       },
     );

@@ -88,7 +88,7 @@ abstract class _LoginControllerBase with Store {
             failureMessage: failure.message,
             context: context,
           ),
-          (sucess) => state = ControlState.sucess,
+          (sucess) => state = ControlState.success,
         );
       },
     );

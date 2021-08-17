@@ -104,13 +104,6 @@ class ScreenUtil {
   static double pageViewHeight(BuildContext context) {
     final MediaQueryData mediaQuery = MediaQuery.of(context);
     return mediaQuery.size.height -
-        (kToolbarHeight * 2).scale -
-        MediaQueryData.fromWindow(window).padding.top;
-  }
-
-  static double pageViewHeightLegacy(BuildContext context) {
-    final MediaQueryData mediaQuery = MediaQuery.of(context);
-    return mediaQuery.size.height -
         kToolbarHeight.scale -
         MediaQueryData.fromWindow(window).padding.top;
   }

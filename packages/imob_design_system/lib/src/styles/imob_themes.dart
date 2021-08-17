@@ -134,6 +134,7 @@ class ImobThemes {
         headline5: TextStyle(
           fontSize: 31.scale,
           fontWeight: FontWeight.w600,
+          color: fontColor,
         ),
         headline6: TextStyle(
           fontSize: 26.scale,
@@ -160,7 +161,7 @@ class ImobThemes {
           color: fontColor,
         ),
         bodyText2: TextStyle(
-          fontSize: 18.scale,
+          fontSize: 17.scale,
           fontWeight: FontWeight.w400,
           letterSpacing: 0.25,
           color: fontColor,
@@ -204,7 +205,8 @@ class ImobThemes {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: true,
         showUnselectedLabels: true,
-        selectedItemColor: primary,
+        selectedItemColor: secondary,
+
         // unselectedItemColor: disabledColor,
         backgroundColor: background,
         selectedLabelStyle: TextStyle(
@@ -221,6 +223,28 @@ class ImobThemes {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0.scale),
         ),
+      ),
+      appBarTheme: AppBarTheme(
+        backgroundColor: background,
+        elevation: 0.0,
+        titleTextStyle: TextStyle(
+          fontSize: 26.scale,
+          fontWeight: FontWeight.w700,
+          color: primary,
+        ),
+        iconTheme: IconThemeData(
+          color: onBackground,
+        ),
+        textTheme: TextTheme(
+          headline6: TextStyle(
+            fontSize: 26.scale,
+            fontWeight: FontWeight.w700,
+            color: primary,
+          ),
+        ),
+      ),
+      iconTheme: IconThemeData(
+        color: onBackground,
       ),
     );
   }

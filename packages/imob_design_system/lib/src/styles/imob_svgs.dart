@@ -26,4 +26,5 @@ class ImobSvgs {
   static const String package = 'imob_design_system';
 
   static String logo_imob_telecom = '$_pathToFile/logo/logo_imob_telecom.svg';
+  static String icon_imob_telecom = '$_pathToFile/logo/icon_imob_telecom.svg';
 }

@@ -9,7 +9,7 @@ environment:
 
 dependencies:
   # State Management, DI and Routes
-  flutter_modular: 3.3.1
+  flutter_modular: 3.4.0-dev.6
 
   flutter:
     sdk: flutter
@@ -23,6 +23,7 @@ dev_dependencies:
 flutter:
   assets:
     - lib/assets/svgs/logo/logo_imob_telecom.svg
+    - assets/svgs/logo/icon_imob_telecom.svg
   
   fonts:
     - family: JosefinSans

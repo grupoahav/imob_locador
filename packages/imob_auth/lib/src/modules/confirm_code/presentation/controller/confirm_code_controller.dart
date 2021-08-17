@@ -42,7 +42,7 @@ abstract class _ConfirmCodeControllerBase with Store {
           await FirebaseAuth.instance.signInWithCredential(credential);
 
       _onConfirmSmsCode.call(userCredential.user);
-      state = ControlState.sucess;
+      state = ControlState.success;
     }
   }
 
