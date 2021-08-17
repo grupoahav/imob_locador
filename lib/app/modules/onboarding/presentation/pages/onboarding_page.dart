@@ -4,7 +4,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:imob_design_system/imob_design_system.dart';
 
-import '../../../home/home_module.dart';
+import '../../../bottom_navigation/bottom_navigation_module.dart';
 import '../controllers/onboarding_controller.dart';
 import '../widgets/page_indicator_onboarding_widget.dart';
 import '../widgets/pageview_onboarding_widget.dart';
@@ -57,7 +57,8 @@ class _OnboardingPageState
                       child: ImobButton.secondary(
                         onPressed: () {
                           if (controller.currentIndexPageView == 3) {
-                            Modular.to.navigate(HomeModule.routeInitial);
+                            Modular.to
+                                .navigate(BottonNavigationModule.routeInitial);
                           } else {
                             controller.pageViewController.nextPage(
                               duration: const Duration(milliseconds: 250),
