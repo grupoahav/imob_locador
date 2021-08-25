@@ -32,6 +32,12 @@ class _AppWidgetState extends State<AppWidget> {
           title: 'Imob - Locador',
           theme: ImobThemes.light,
           initialRoute: AppModule.initialRoute,
+          builder: (context, widget) {
+            return ScrollConfiguration(
+              behavior: const ScrollBehaviorModified(),
+              child: widget!,
+            );
+          },
           localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -43,5 +49,24 @@ class _AppWidgetState extends State<AppWidget> {
         ).modular();
       },
     );
+  }
+}
+
+class ScrollBehaviorModified extends ScrollBehavior {
+  const ScrollBehaviorModified();
+  @override
+  ScrollPhysics getScrollPhysics(BuildContext context) {
+    switch (getPlatform(context)) {
+      case TargetPlatform.iOS:
+      case TargetPlatform.macOS:
+      case TargetPlatform.android:
+        return const AlwaysScrollableScrollPhysics(
+          parent: BouncingScrollPhysics(),
+        );
+      case TargetPlatform.fuchsia:
+      case TargetPlatform.linux:
+      case TargetPlatform.windows:
+        return const ClampingScrollPhysics();
+    }
   }
 }

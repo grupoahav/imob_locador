@@ -35,4 +35,6 @@ class ImobColors {
 
   static const yellow = Color(0xFFFCC418);
   static const yellowLight = Color(0xFFFCD553);
+
+  static const purple = Color(0xFF7842FA);
 }

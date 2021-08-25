@@ -9,7 +9,7 @@ environment:
 
 dependencies:
   # State Management, DI and Routes
-  flutter_modular: 3.4.0-dev.6
+  flutter_modular: 3.4.0
 
   flutter:
     sdk: flutter

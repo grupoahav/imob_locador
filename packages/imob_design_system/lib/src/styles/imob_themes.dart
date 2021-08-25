@@ -144,7 +144,7 @@ class ImobThemes {
         ),
         subtitle1: TextStyle(
           fontSize: 20.scale,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w700,
           letterSpacing: 0.15,
           color: fontColor,
         ),

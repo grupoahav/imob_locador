@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:imob_design_system/imob_design_system.dart';
 
-import '../place_item_view.dart';
+import '../../../domain/enums/registration_progress_enum.dart';
+import '../../../submodules/dados_proprietario/dados_proprietario_module.dart';
+import '../imob_line_stepper_widget.dart';
+import '../imob_step_widget.dart';
 
 class CadastrarLocalPageSuccess extends StatelessWidget {
   const CadastrarLocalPageSuccess({Key? key}) : super(key: key);
@@ -11,122 +14,152 @@ class CadastrarLocalPageSuccess extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
 
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.scale),
-      child: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
-        slivers: [
-          SliverToBoxAdapter(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'SAR #203',
-                  style: theme.textTheme.headline6,
-                ),
-                Text(
-                  'por Felipe Braga de Almeida',
-                  style: theme.textTheme.caption,
-                ),
-              ],
-            ),
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (ctx, index) {
-                return Column(
-                  children: <Widget>[
-                    InkWell(
-                      borderRadius: BorderRadius.circular(10.scale),
-                      onTap: () {},
-                      child: Row(
-                        children: <Widget>[
-                          Column(
-                            children: <Widget>[
-                              _buildLine(
-                                index != 0,
-                                ImobColors.red,
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: ImobColors.red,
-                                    width: 2,
-                                    style: BorderStyle.solid,
-                                  ),
-                                ),
-                                child: Container(
-                                  margin: EdgeInsets.all(6.scale),
-                                  height: 16,
-                                  width: 16,
-                                  decoration: const BoxDecoration(
-                                    color: ImobColors.red,
-                                    shape: BoxShape.circle,
-                                  ),
-                                ),
-                              ),
-                              _buildLine(
-                                index != 6,
-                                ImobColors.red,
-                              ),
-                            ],
-                          ),
-                          Expanded(
-                            child: Container(
-                              margin: const EdgeInsetsDirectional.only(
-                                start: 32.0,
-                              ),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: <Widget>[
-                                      Container(
-                                        margin: const EdgeInsets.only(top: 2.0),
-                                        child: Text(
-                                          'Dados do Proprietário',
-                                          style: theme.textTheme.subtitle1,
-                                        ),
-                                      ),
-                                      Container(
-                                        margin: const EdgeInsets.only(top: 2.0),
-                                        child: Text(
-                                          'Preenchimento Completo',
-                                          style: theme.textTheme.caption,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const Icon(Icons.chevron_right_rounded)
-                                ],
-                              ),
+    return Stack(
+      alignment: Alignment.bottomCenter,
+      children: [
+        CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const ImobBackButton(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 24.scale,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'SAR #203',
+                          style: theme.textTheme.headline5!.merge(
+                            TextStyle(
+                              color: theme.colorScheme.primary,
                             ),
+                          ),
+                        ),
+                        // Text(
+                        //   'SAR #203',
+                        //   style: theme.textTheme.headline6,
+                        // ),
+                        Text(
+                          'por Felipe Braga de Almeida',
+                          style: theme.textTheme.caption,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SliverPadding(
+              padding: EdgeInsets.only(
+                top: 24.scale,
+                left: 24.scale,
+                right: 24.scale,
+                bottom: 24 + theme.buttonTheme.height,
+              ),
+              sliver: SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (ctx, index) {
+                    return ItemStep(
+                      title: 'Dados do Proprietário',
+                      progress: EnumRegistrationProgress.values[index % 3],
+                      showFinalLine: index < 6,
+                      onTap: () {
+                        Modular.to.pushNamed(
+                          '.${DadosProprietarioModule.routeInitial}',
+                        );
+                      },
+                    );
+                  },
+                  childCount: 7,
+                ),
+              ),
+            ),
+          ],
+        ),
+        Padding(
+          padding: EdgeInsets.all(24.0.scale),
+          child: ImobButton(text: 'Continuar Preenchimento', onPressed: () {}),
+        ),
+      ],
+    );
+  }
+}
+
+class ItemStep extends StatelessWidget {
+  const ItemStep({
+    Key? key,
+    required this.onTap,
+    required this.title,
+    required this.progress,
+    required this.showFinalLine,
+  }) : super(key: key);
+
+  final VoidCallback onTap;
+  final String title;
+  final EnumRegistrationProgress progress;
+  final bool showFinalLine;
+
+  @override
+  Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: <Widget>[
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  ImobStep(progress: progress),
+                  Visibility(
+                    visible: showFinalLine,
+                    child: ImobLineStep(
+                      color: progress.color,
+                    ),
+                  ),
+                ],
+              ),
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.only(bottom: 16.scale),
+                  margin: const EdgeInsetsDirectional.only(
+                    start: 32.0,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Text(
+                            title,
+                            style: theme.textTheme.subtitle1,
+                          ),
+                          SizedBox(height: 8.scale),
+                          Text(
+                            progress.toFormattedString(),
+                            style: theme.textTheme.caption,
                           ),
                         ],
                       ),
-                    ),
-                    // _buildVerticalBody(i),
-                  ],
-                );
-              },
-              childCount: 7,
-            ),
+                      const Icon(Icons.chevron_right_rounded)
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
+          // _buildVerticalBody(i),
         ],
       ),
-    );
-  }
-
-  Widget _buildLine(bool visible, Color lineColor) {
-    return Container(
-      width: visible ? 1.0 : 0.0,
-      height: 32.0.scale,
-      color: lineColor,
     );
   }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:imob_core/imob_core.dart';
-import 'package:imob_design_system/imob_design_system.dart';
 
 import '../controllers/cadastrar_local_controller.dart';
 import '../widgets/cadastrar_local/cadastrar_local_page_empty.dart';
@@ -21,16 +20,16 @@ class _CadastrarLocalPageState
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    final ThemeData theme = Theme.of(context);
+    // final ThemeData theme = Theme.of(context);
 
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Novo local',
-            style: theme.textTheme.bodyText2,
-          ),
-        ),
+        // appBar: AppBar(
+        //   title: Text(
+        //     'Novo local',
+        //     // style: theme.textTheme.bodyText2,
+        //   ),
+        // ),
         body: Observer(
           builder: (_) {
             switch (ControlState.success) {

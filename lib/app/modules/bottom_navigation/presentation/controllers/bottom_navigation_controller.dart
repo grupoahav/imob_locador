@@ -16,12 +16,17 @@ abstract class _BottomNavigationControllerBase
 
   @action
   void setCurrentIndex(int index) {
+    currentIndex = index;
+  }
+
+  @action
+  void animatedToPage(int index) {
     pageController.animateToPage(
       index,
       duration: const Duration(milliseconds: 500),
       curve: Curves.ease,
     );
-    currentIndex = index;
+    setCurrentIndex(index);
   }
 
   @override

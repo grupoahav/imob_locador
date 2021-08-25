@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:imob_locador/app/modules/cadastrar_local/cadastrar_local_module.dart';
 
+import '../../../cadastrar_local/cadastrar_local_module.dart';
 import '../controllers/bottom_navigation_controller.dart';
 
 class ImobBottomNavigationBar extends StatelessWidget {
@@ -18,8 +18,9 @@ class ImobBottomNavigationBar extends StatelessWidget {
         onTap: (index) {
           if (index == 1) {
             Modular.to.pushNamed(CadastrarLocalModule.routeInitial);
+            controller.animatedToPage(index);
           } else {
-            controller.setCurrentIndex(index);
+            controller.animatedToPage(index);
           }
         },
         currentIndex: controller.currentIndex,

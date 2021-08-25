@@ -12,7 +12,7 @@ dependencies:
   # State Management, DI and Routes
   mobx: 2.0.1
   flutter_mobx: 2.0.0
-  flutter_modular: 3.4.0-dev.6
+  flutter_modular: 3.4.0
 
   # Utils
   equatable: 2.0.0

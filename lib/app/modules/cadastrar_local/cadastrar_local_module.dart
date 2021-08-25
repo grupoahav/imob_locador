@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import 'presentation/controllers/cadastrar_local_controller.dart';
 import 'presentation/pages/cadastrar_local_page.dart';
+import 'submodules/dados_proprietario/dados_proprietario_module.dart';
 
 class CadastrarLocalModule extends WidgetModule {
   static String get routeName => '/cadastrarLocal';
@@ -24,6 +25,10 @@ class CadastrarLocalModule extends WidgetModule {
     ChildRoute(
       Modular.initialRoute,
       child: (_, args) => CadastrarLocalPage(),
+    ),
+    ModuleRoute(
+      DadosProprietarioModule.routeName,
+      module: DadosProprietarioModule(),
     ),
   ];
 
